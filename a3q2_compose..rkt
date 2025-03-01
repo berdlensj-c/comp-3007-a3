@@ -31,4 +31,5 @@
 
 (define mod3 (divisibleBy 3))
 (mod3 7); => #f
-(mod3 9); => #t
+(mod3 9); => #t\
+(mod3 12)

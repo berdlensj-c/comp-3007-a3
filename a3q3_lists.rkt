@@ -32,40 +32,42 @@
 
 ; )
 
+
+
+;add more tests 
 (define (count x L)
 
-    (define list `())
 
-    ; (display (list-ref L 0))
-    ; (newline)
+    (if (= 0 (length L))
+        0
 
-    ( if (equal? (length L) 0)
+        (+ 
+            (if (= x (car L ))
+                1
+                0
+            ) 
+            (count x (cdr L))
+        )
 
-        (display "t")
-
-        ;there is something wrong with this do 
-        (do ((i 0 (+ i 1)) )
-            (equal? i (- (length L) 1))
-           
-
-            (if (equal? (list-ref L i) x)
-                (append list '(i))
-
-                (display "t")
-            )
-
-            (display (length list))
-
-        )  
-    )  
-
-    (length list)
+    )
 
 )
 
 (count 2 '(1 2 1 2 3 1 2 2 1))
+(count 4 '(1 2 1 2 3 1 2 2 1))
+(count 2 '())
 
 
 
+;have to find all the unique elements in the list first and then we can count 
+(define (mode L)
+
+    (define (helper x )
+
+    )
+
+
+
+)
 
 
