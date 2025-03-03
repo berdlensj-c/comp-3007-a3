@@ -11,8 +11,12 @@
   func  
 )
 
+;Testing
 (define my-mult (hyper +) )
+(my-mult 2 3) 
+(my-mult 0 1) 
 (define my-exp (hyper my-mult))
-(my-exp 2 4) 
+(my-exp -2 -13) 
+(my-exp 26 12) 
 (define my-tetra (hyper my-exp))
-(my-tetra 2 4) 
+(my-tetra 9 0) 
