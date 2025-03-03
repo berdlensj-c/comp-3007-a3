@@ -14,24 +14,67 @@
 
 )
 
+;Testing
+(repeat 'a 10)
+(repeat 'a -1)
+(repeat 'a 0)
+(repeat 'a 100)
 
-; (repeat 'a 10)
-; (repeat 'a -1)
-; (repeat 'a 0)
-; (repeat 'a 100)
 
 ; (define (alternate list1 list2)
 
-;     (define altList '())
+    
 
-;     (if (< (length altList) (+ (length list1) (length list2)))
-;         '()
+;     (define (helper x y num)
 
+;         (cond 
+;             ()
         
+        
+;         )
+
+;         (cond 
+;             (
+;                 ( and    
+;                     (= (length x) num)
+
+;                     ( > (length y)  num)
+;                 )
+;                 ( car y)
+            
+;             )
+
+;             (
+;                 ( and    
+;                     (= (length y) num)
+
+;                     ( > (length x)  num)
+;                 )
+;                 ( car x)
+;             )
+
+;             (
+;                 ( and    
+;                     (= (length y) num)
+
+;                     ( = (length x)  num)
+;                 )
+;                 (list ( car x) (car y))
+;             )
+
+
+;             (else (list (helper (cdr x)(cdr y) (+ num 1))))
+;         )
+
+    
 ;     )
 
+
+;     (helper list1 list2 0)
+    
 ; )
 
+; (alternate '(0 0 0 0) '(1 1 1 1 1 1)) ;→ (0 1 0 1 0 1 0 1 1 1)
 
 
 ;add more tests 
@@ -42,7 +85,7 @@
         0
 
         (+ 
-            (if (= x (car L ))
+            (if (equal? x (car L ))
                 1
                 0
             ) 
@@ -53,21 +96,49 @@
 
 )
 
+;Testing
 (count 2 '(1 2 1 2 3 1 2 2 1))
 (count 4 '(1 2 1 2 3 1 2 2 1))
 (count 2 '())
+(count 9 '(1 2 1 2 3 1 2 2 1))
 
 
 
-;have to find all the unique elements in the list first and then we can count 
 (define (mode L)
 
-    (define (helper x )
+    (define (helper num currMode lst )
 
+        ( if (null? lst)
+            currMode
+
+            (let* ( (curr (car lst))
+                    (currNum (count curr lst))
+                )
+            
+
+            
+                (if (> currNum num)
+                    (helper currNum curr (cdr lst))
+
+                    (helper num currMode (cdr lst))
+
+
+                )
+            )
+        )
     )
+    
 
+    (if (null? L)
+        '()
 
+        (helper 0 '() L)
+    )
 
 )
 
-
+;Testing
+(mode '())
+(mode '(1 2 3 1 2 3 1 2 3))
+(mode '(a b a c a d d a b c a b)) ;→ a
+(mode '(2 b a 3 2 c b 1 b 2 d a)) ;→ 2

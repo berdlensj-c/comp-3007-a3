@@ -1,8 +1,6 @@
 ;name: berdlens jean-charles student number: 101232931 
 #lang racket 
 
-; don't forge to add when b is equal to 0
-
 (define (hyper x)
   (define (func a b)
     (if (<= b 1)
