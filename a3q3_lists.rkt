@@ -139,5 +139,5 @@
 ;Testing
 (mode '())
 (mode '(1 2 3 1 2 3 1 2 3))
-(mode '(a b a c a d d a b c a b)) ;→ a
-(mode '(2 b a 3 2 c b 1 b 2 d a)) ;→ 2
+(mode '(a b c d a b c a b a )) 
+(mode '( 1 2 a b c d 1 2 2 2 2)) 
